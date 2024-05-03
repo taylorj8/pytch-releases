@@ -8,6 +8,7 @@ Pytch.
 v2.1.0 (2024-MM-DD)
 --------------------
 
+* Add "standalone play demo" feature.
 
 
 v2.0.0 (2024-04-03)
