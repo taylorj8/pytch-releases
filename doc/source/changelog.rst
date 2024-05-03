@@ -9,6 +9,8 @@ v2.1.0 (2024-MM-DD)
 --------------------
 
 * Add "standalone play demo" feature.
+* Improve cues for usage of "task done" checkboxes in per-method
+  lessons.
 
 
 v2.0.0 (2024-04-03)
