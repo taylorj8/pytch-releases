@@ -5,7 +5,7 @@ This page outlines what's changed as we've released new versions of
 Pytch.
 
 
-v2.1.0 (2024-MM-DD)
+v2.1.0 (2024-05-10)
 --------------------
 
 * Add "standalone play demo" feature.
