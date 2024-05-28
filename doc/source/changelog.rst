@@ -8,7 +8,8 @@ Pytch.
 v2.2.0 (2024-MM-DD)
 --------------------
 
-
+* Fix bug whereby using browser's "back" button left some modals still
+  visible, sometimes leading to crashes.
 
 v2.1.0 (2024-05-10)
 --------------------
