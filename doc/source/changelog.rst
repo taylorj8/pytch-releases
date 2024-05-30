@@ -26,7 +26,7 @@ v2.0.0 (2024-04-03)
 * Add new *script-by-script* editing mode and tutorial.
 * Update styling.
 * Handle capital/lower-case letters more sensibly for when-key-pressed
-  scripts and use of `key_pressed()` function.
+  scripts and use of ``key_pressed()`` function.
 
 
 v1.11.1 (2023-12-21)
