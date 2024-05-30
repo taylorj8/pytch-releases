@@ -5,7 +5,7 @@ This page outlines what's changed as we've released new versions of
 Pytch.
 
 
-v2.2.0 (2024-MM-DD)
+v2.2.0 (2024-05-30)
 --------------------
 
 * Fix bug whereby using browser's "back" button left some modals still
