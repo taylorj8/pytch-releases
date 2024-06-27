@@ -8,6 +8,7 @@ Pytch.
 v2.3.0 (2024-MM-DD)
 --------------------
 
+* Make "Add something" button background only as big as needed.
 
 
 v2.2.0 (2024-05-30)
