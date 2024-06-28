@@ -9,12 +9,13 @@ v2.3.0 (2024-MM-DD)
 --------------------
 
 * Make "Add something" button background only as big as needed.
-* Display labels on costumes and backdrops showing zero-based index.
 * Check that ``wait_seconds()`` has been given a number.
 * Allow ``start_sound()`` and ``play_sound_until_done()`` to be given
   a number, meaning the sound's index in the Sprite's (or Stage's)
   list of sounds.  Both methods still accept a string, meaning the
   sound's name.
+* Display labels on costumes, backdrops, and sounds showing zero-based
+  index.
 * Add examples for ``broadcast()`` and ``broadcast_and_wait()`` to
   help sidebar content.
 
