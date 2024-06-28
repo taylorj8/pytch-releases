@@ -10,6 +10,7 @@ v2.3.0 (2024-MM-DD)
 
 * Make "Add something" button background only as big as needed.
 * Display labels on costumes and backdrops showing zero-based index.
+* Check that ``wait_seconds()`` has been given a number.
 
 
 v2.2.0 (2024-05-30)
