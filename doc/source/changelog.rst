@@ -15,6 +15,8 @@ v2.3.0 (2024-MM-DD)
   a number, meaning the sound's index in the Sprite's (or Stage's)
   list of sounds.  Both methods still accept a string, meaning the
   sound's name.
+* Add examples for ``broadcast()`` and ``broadcast_and_wait()`` to
+  help sidebar content.
 
 
 v2.2.0 (2024-05-30)
