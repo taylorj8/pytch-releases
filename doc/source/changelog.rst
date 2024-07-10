@@ -5,7 +5,7 @@ This page outlines what's changed as we've released new versions of
 Pytch.
 
 
-v2.3.0 (2024-MM-DD)
+v2.3.0 (2024-07-10)
 --------------------
 
 * Make "Add something" button background only as big as needed.
