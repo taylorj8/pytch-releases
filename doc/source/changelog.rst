@@ -8,6 +8,7 @@ Pytch.
 v2.4.0 (2024-MM-DD)
 --------------------
 
+* Check that ``create_clone_of()`` has been given a Pytch sprite.
 
 
 v2.3.0 (2024-07-10)
