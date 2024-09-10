@@ -5,7 +5,7 @@ This page outlines what's changed as we've released new versions of
 Pytch.
 
 
-v2.4.0 (2024-MM-DD)
+v2.4.0 (2024-09-10)
 --------------------
 
 * Check that ``create_clone_of()`` has been given a Pytch sprite.
