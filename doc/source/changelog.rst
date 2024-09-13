@@ -8,6 +8,7 @@ Pytch.
 v2.5.0 (2024-MM-DD)
 --------------------
 
+* Fix errors in script-by-script help sidebar content.
 
 
 v2.4.0 (2024-09-10)
