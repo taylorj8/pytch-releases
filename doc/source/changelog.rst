@@ -9,6 +9,7 @@ v2.5.0 (2024-MM-DD)
 --------------------
 
 * Fix errors in script-by-script help sidebar content.
+* Improve contrast and colours in script-by-script IDE.
 
 
 v2.4.0 (2024-09-10)
