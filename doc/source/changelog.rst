@@ -8,6 +8,7 @@ Pytch.
 v2.6.0 (2024-MM-DD)
 --------------------
 
+* Improve developer documentation.
 
 
 v2.5.0 (2024-09-16)
