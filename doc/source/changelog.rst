@@ -10,6 +10,7 @@ v2.6.0 (2024-MM-DD)
 
 * Improve developer documentation and tools.
 * Support script-by-script lesson specimens.
+* Add script-by-script specimens for existing lesson plans.
 
 
 v2.5.0 (2024-09-16)
