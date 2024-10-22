@@ -40,6 +40,15 @@ const Errors = () => {
   return <div className="ErrorsPane">{inner}</div>;
 };
 
+// TODO implement
+const Debug = () => {
+  const inner =
+      <p className="info-pane-placeholder">
+        This will eventually show variables and other useful stuff.
+      </p>
+  return <div className="DebugPane">{inner}</div>;
+};
+
 const InfoPanel = () => {
   const isSyncingFromBackEnd = useStoreState(
     (state) => state.activeProject.syncState.loadState === "pending"
@@ -80,6 +89,9 @@ const InfoPanel = () => {
         </Tab>
         <Tab className="InfoPane" eventKey="errors" title="Errors">
           <Errors />
+        </Tab>
+        <Tab className="InfoPane" eventKey="debug" title="Debug">
+          <Debug />
         </Tab>
         {liveReloadEnabled() ? (
           <Tab

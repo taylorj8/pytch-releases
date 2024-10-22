@@ -426,6 +426,7 @@ export type InfoPanelTabKey =
   | "assets"
   | "output"
   | "errors"
+  | "debug"
   | "websocket-log";
 
 export interface IInfoPanel {
