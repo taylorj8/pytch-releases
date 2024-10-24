@@ -8,6 +8,7 @@ Pytch.
 v2.7.0 (2024-MM-DD)
 -------------------
 
+* Improve robustness of build process.
 
 
 v2.6.0 (2024-10-21)
