@@ -9,6 +9,7 @@ v2.7.0 (2024-MM-DD)
 -------------------
 
 * Improve robustness of build process.
+* Support more kinds of learner tasks in script-by-script tutorials.
 
 
 v2.6.0 (2024-10-21)
