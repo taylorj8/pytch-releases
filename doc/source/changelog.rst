@@ -12,6 +12,7 @@ v2.7.0 (2024-MM-DD)
 * Support more kinds of learner tasks in script-by-script tutorials.
 * Make minor accessibility and related improvements.
 * Improve presentation of learner tasks in script-by-script tutorials.
+* Allow users to duplicate a script.
 
 
 v2.6.0 (2024-10-21)
