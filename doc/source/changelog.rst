@@ -15,6 +15,7 @@ v2.7.0 (2024-MM-DD)
 * Allow users to duplicate a script.
 * Try to keep cursor line visible when navigating script-by-script
   code with keyboard.
+* Document ``random.uniform()`` in help sidebar.
 
 
 v2.6.0 (2024-10-21)
