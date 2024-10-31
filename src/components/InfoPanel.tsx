@@ -8,6 +8,7 @@ import EditorWebSocketInfo from "./EditorWebSocketInfo";
 import { LayoutChooser } from "./LayoutChooser";
 import { isEnabled as liveReloadEnabled } from "../model/live-reload";
 import { InfoPanelTabKey } from "../model/ui";
+import { DebugPane } from "./DebugPane";
 
 const StandardOutput = () => {
   const text = useStoreState((state) => state.standardOutputPane.text);
@@ -87,15 +88,8 @@ const InfoPanel = () => {
           <Errors />
         </Tab>
 
-        <Tab className="InfoPane" eventKey="debug" title="Debug" onClick={
-          () => {
-            console.log("tab selected")
-            setEditMode("debug");
-            let name = document.getElementById("control") as HTMLElement
-            name?.style.setProperty("background-color", "green")
-          }
-        }>
-          <p className="info">Test12345</p>
+        <Tab className="InfoPane" eventKey="debug" title="Debug">
+          <DebugPane />
 		    </Tab>
 
         {/* <DebugTab className="InfoPane" eventKey="debug" title="Debug" mode="edit"></DebugTab> */}
