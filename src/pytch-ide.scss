@@ -405,7 +405,7 @@ $speech-bubble-max-height: 180px;
       @include background-color-as-button(
         $help-sidebar-expand-button-background
       );
-      background-color: --help-sidebar-background-color;
+      background-color: var(--help-sidebar-background-color);
       color: white;
       width: 1.5rem;
       @include align-center-middle();

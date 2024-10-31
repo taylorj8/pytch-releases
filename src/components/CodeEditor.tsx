@@ -47,6 +47,9 @@ const CodeAceEditor = () => {
   const saveIsPending = useStoreState(
     (state) => state.activeProject.syncState.loadState === "pending"
   );
+  const inDebugMode = useStoreState(
+    (state) => state.ideLayout.editMode === "debug"
+  )
   const editSeqNum = useStoreState((state) => state.activeProject.editSeqNum);
   const lastSyncFromStorageSeqNum = useStoreState(
     (state) => state.activeProject.lastSyncFromStorageSeqNum
@@ -122,7 +125,7 @@ const CodeAceEditor = () => {
         height="100%"
         onLoad={setFlatAceController}
         onChange={updateCodeText}
-        readOnly={saveIsPending}
+        readOnly={saveIsPending || inDebugMode}
       />
       <ReadOnlyOverlay />
     </>
