@@ -40,15 +40,6 @@ const Errors = () => {
   return <div className="ErrorsPane">{inner}</div>;
 };
 
-// TODO implement
-const Debug = () => {
-  const inner =
-      <p className="info-pane-placeholder">
-        This will eventually show variables and other useful stuff.
-      </p>
-  return <div className="DebugPane">{inner}</div>;
-};
-
 const InfoPanel = () => {
   const isSyncingFromBackEnd = useStoreState(
     (state) => state.activeProject.syncState.loadState === "pending"
@@ -62,6 +53,8 @@ const InfoPanel = () => {
   );
   const layoutKind = useStoreState((state) => state.ideLayout.kind);
 
+  const setEditMode = useStoreActions(actions => actions.ideLayout.setEditMode);
+
   if (isSyncingFromBackEnd) {
     return null;
   }
@@ -74,7 +67,10 @@ const InfoPanel = () => {
         className={`InfoPanel ${layoutKind}`}
         transition={false}
         activeKey={activeKey}
-        onSelect={(k) => setActiveKey(k as InfoPanelTabKey)}
+        onSelect={(k) => {
+          setActiveKey(k as InfoPanelTabKey)
+          setEditMode(k === "debug" ? "debug" : "edit")
+        }}
       >
         {isTrackingTutorial && (
           <Tab className="InfoPane" eventKey="tutorial" title="Tutorial">
@@ -90,9 +86,19 @@ const InfoPanel = () => {
         <Tab className="InfoPane" eventKey="errors" title="Errors">
           <Errors />
         </Tab>
-        <Tab className="InfoPane" eventKey="debug" title="Debug">
-          <Debug />
-        </Tab>
+
+        <Tab className="InfoPane" eventKey="debug" title="Debug" onClick={
+          () => {
+            console.log("tab selected")
+            setEditMode("debug");
+            let name = document.getElementById("control") as HTMLElement
+            name?.style.setProperty("background-color", "green")
+          }
+        }>
+          <p className="info">Test12345</p>
+		    </Tab>
+
+        {/* <DebugTab className="InfoPane" eventKey="debug" title="Debug" mode="edit"></DebugTab> */}
         {liveReloadEnabled() ? (
           <Tab
             className="InfoPane"

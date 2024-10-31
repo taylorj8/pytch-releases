@@ -117,6 +117,8 @@ type UpdatePointerOverStageArgs = {
 
 type EnsureNotFullScreenAction = "restore-layout" | "force-wide-info-pane";
 
+export type EditMode = "edit" | "debug"
+
 export interface IIDELayout {
   kind: IDELayoutKind;
   fullScreenState: FullScreenState;
@@ -142,6 +144,8 @@ export interface IIDELayout {
   dismissButtonTour: Action<IIDELayout>;
   initiateButtonTour: Action<IIDELayout>;
   maybeAdvanceTour: Action<IIDELayout, ButtonTourStage>;
+  editMode: EditMode;
+  setEditMode: Action<IIDELayout, EditMode>
 }
 
 export const fullScreenStageDisplaySize = (controlsHeight = 36) => {
@@ -324,6 +328,14 @@ export const ideLayout: IIDELayout = {
   }),
 
   helpSidebar,
+
+  editMode: "edit",
+  setEditMode: action((state, editMode) => {
+    state.editMode = editMode
+    document.documentElement.style.setProperty(
+      "--help-sidebar-background-color", editMode === "edit" ? "#4389c3" : "#e02626"
+    )
+  })
 };
 
 export interface IUserConfirmations {
