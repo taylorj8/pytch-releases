@@ -333,7 +333,7 @@ export const ideLayout: IIDELayout = {
   setEditMode: action((state, editMode) => {
     state.editMode = editMode
     document.documentElement.style.setProperty(
-      "--help-sidebar-background-color", editMode === "edit" ? "#4389c3" : "#e02626"
+      "--help-sidebar-background-color", editMode === "edit" ? "#72abfe" : "#e02626"
     )
   })
 };
