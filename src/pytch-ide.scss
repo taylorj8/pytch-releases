@@ -645,17 +645,20 @@ div.spacer-instead-of-resizer {
 
 .DebugPane {
   margin: 2rem 3rem;
-
+  overflow-x: auto;
+  
   .card-container {
     display: flex;
     gap: 1rem;
     margin-top: 2rem;
+    white-space: nowrap;
   }
 
   .card-container .card {
-    flex: 1 1 200px;
+    flex: 0 0 200px;
     flex-direction: column;
     max-width: 300px;
+    white-space: normal;
   }
 
   .card-container .card .card-title {
