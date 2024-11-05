@@ -8,6 +8,7 @@ Pytch.
 v2.8.0 (2024-MM-DD)
 -------------------
 
+* Improve chapter navigation for script-by-script tutorials.
 
 
 v2.7.1 (2024-11-02)
