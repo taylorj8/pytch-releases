@@ -5,7 +5,7 @@ This page outlines what's changed as we've released new versions of
 Pytch.
 
 
-v2.8.0 (2024-MM-DD)
+v2.8.0 (2024-11-19)
 -------------------
 
 * Improve chapter navigation for script-by-script tutorials.
