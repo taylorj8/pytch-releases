@@ -13,6 +13,7 @@ import {
   IQuestionFromVM,
   MaybeUserAnswerSubmissionToVM,
 } from "../model/user-text-input";
+import { RunState } from "../model/project";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare let Sk: any;
@@ -64,6 +65,7 @@ export class ProjectEngine {
   shouldRun: boolean;
   liveSpeechBubbles: Map<SpeakerId, LiveSpeechBubble>;
   webAppAPI: IWebAppAPI;
+  runState: RunState;
 
   constructor(
     canvas: HTMLCanvasElement,
@@ -110,12 +112,13 @@ export class ProjectEngine {
     this.liveSpeechBubbles = newSpeechBubblesMap();
 
     this.shouldRun = true;
+    this.runState = "run";
 
     this.oneFrame = this.oneFrame.bind(this);
     console.log(
       `ProjectEngine[${this.id}]:` +
-        ` canvas is ${canvas.width} × ${canvas.height};` +
-        " requesting animation frame"
+      ` canvas is ${canvas.width} × ${canvas.height};` +
+      " requesting animation frame"
     );
     window.requestAnimationFrame(this.oneFrame);
   }
@@ -324,27 +327,36 @@ export class ProjectEngine {
     const maybeQuestionAnswer =
       this.webAppAPI.maybeAcquireUserInputSubmission();
     if (maybeQuestionAnswer != null)
+      
       project.accept_question_answer(
         maybeQuestionAnswer.questionId,
         maybeQuestionAnswer.answer
       );
 
-    Sk.pytch.sound_manager.one_frame();
-    const projectState = project.one_frame();
+    if(this.runState !== "pause") {
+      Sk.pytch.sound_manager.one_frame();
+      const projectState = project.one_frame();
 
-    if (projectState.exception_was_raised) {
-      this.webAppAPI.ensureNotFullScreen();
+      if (projectState.exception_was_raised) {
+        this.webAppAPI.ensureNotFullScreen();
+      }
+
+      const question = projectState.maybe_live_question;
+      if (question == null) {
+        this.webAppAPI.clearUserQuestion();
+      } else {
+        this.webAppAPI.askUserQuestion({
+          id: question.id,
+          prompt: question.prompt,
+        });
+      }
+
+      if (this.runState === "step") {
+        this.runState = "pause";
+      }
     }
 
-    const question = projectState.maybe_live_question;
-    if (question == null) {
-      this.webAppAPI.clearUserQuestion();
-    } else {
-      this.webAppAPI.askUserQuestion({
-        id: question.id,
-        prompt: question.prompt,
-      });
-    }
+    // for (const alienInstance of project.actors[1].instances) { console.log(alienInstance.js_attr("y_position")) }
 
     const renderResult = this.render(project);
     renderResult.webApiCalls.forEach((f) => f());
@@ -362,5 +374,9 @@ export class ProjectEngine {
   requestHalt() {
     console.log(`ProjectEngine[${this.id}]: requestHalt()`);
     this.shouldRun = false;
+  }
+
+  setRunState(runState: RunState) {
+    this.runState = runState;
   }
 }

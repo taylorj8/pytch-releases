@@ -406,7 +406,12 @@ export interface IActiveProject {
   nPendingSyncActions: number;
   pendingSyncActionsExist: Computed<IActiveProject, boolean>;
   increaseNPendingSyncActions: Action<IActiveProject, number>;
+
+  runState: RunState;
+  setRunState: Action<IActiveProject, RunState>;
 }
+
+export type RunState = "run" | "pause" | "step"
 
 const dummyPytchProgram = PytchProgramOps.fromPythonCode(
   "#\n# Your project is loading....\n#\n"
@@ -1253,7 +1258,12 @@ export const activeProject: IActiveProject = {
         `nPendingSyncActions = ${state.nPendingSyncActions} < 0;` +
           " clamping to zero"
       );
-      state.nPendingSyncActions = 0;
+      state.nPendingSyncActions = 0;  
     }
   }),
+
+  runState: "pause",
+  setRunState: action((state, runState) => {
+    state.runState = runState;
+  }) 
 };
