@@ -5,7 +5,7 @@ This page outlines what's changed as we've released new versions of
 Pytch.
 
 
-v2.8.1 (2024-MM-DD)
+v2.8.1 (2024-12-11)
 -------------------
 
 * Fix minor rendering bugs in the "progress trail" for
