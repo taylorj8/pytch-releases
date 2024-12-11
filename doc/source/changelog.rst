@@ -10,6 +10,7 @@ v2.8.1 (2024-MM-DD)
 
 * Fix minor rendering bugs in the "progress trail" for
   script-by-script tutorials.
+* Document ``random.choice()`` in help sidebar.
 
 
 v2.8.0 (2024-11-19)
