@@ -8,6 +8,7 @@ Pytch.
 v2.9.0 (YYYY-MM-DD)
 -------------------
 
+* Add tool to write skeleton of a new tutorial.
 
 
 v2.8.1 (2024-12-11)
