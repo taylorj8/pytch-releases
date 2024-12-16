@@ -15,6 +15,7 @@ v2.9.0 (YYYY-MM-DD)
   tutorials.
 * Default to *v2* of interface (with script-by-script features turned
   on).
+* Add five new script-by-script tutorials and update another.
 
 
 v2.8.1 (2024-12-11)
