@@ -11,6 +11,8 @@ v2.9.0 (YYYY-MM-DD)
 * Add tool to write skeleton of a new tutorial.
 * Improve help sidebar content for ``show_variable()`` and
   ``hide_variable()``.
+* Improve contrast and layout of activity bar and script-by-script
+  tutorials.
 
 
 v2.8.1 (2024-12-11)
