@@ -13,6 +13,8 @@ v2.9.0 (YYYY-MM-DD)
   ``hide_variable()``.
 * Improve contrast and layout of activity bar and script-by-script
   tutorials.
+* Default to *v2* of interface (with script-by-script features turned
+  on).
 
 
 v2.8.1 (2024-12-11)
