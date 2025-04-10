@@ -134,7 +134,7 @@ else
         containing_dir=beta/g${head_sha}
     fi
 
-    export DEPLOY_BASE_URL=/${containing_dir}
+    export DEPLOY_BASE_URL=/
     export PYTCH_VERSION_TAG=g$head_sha
 fi
 
