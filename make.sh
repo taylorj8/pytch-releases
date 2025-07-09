@@ -111,7 +111,7 @@ if [ "$current_branch" = releases ]; then
     bare_version="${current_tag#v}"
     zipfile_name=release-"$bare_version".zip
     containing_dir=releases/"$bare_version"
-    export DEPLOY_BASE_URL=/
+    export DEPLOY_BASE_URL=/${containing_dir}
     export PYTCH_VERSION_TAG=$current_tag
 else
     if [ ! -e pytch-tutorials/index.yaml ]; then
